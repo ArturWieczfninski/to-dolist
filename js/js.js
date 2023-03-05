@@ -40,7 +40,6 @@
             <li class="${hideDone & task.done ? "hidden" : ""} list__element">
                 <button class="js-done list__button list__button--done">${task.done ? "✔" : ""}</button>
                 <span class="${task.done ? "list__element--done" : ""}">${task.content}</span>
-                <span class="js-timeAdded list__time">Dodano o godzinie: ${task.time}</span>
                 <button class="js-remove list__button list__button--remove">🗑</button>
             </li>
             `;
@@ -85,14 +84,6 @@
         render();
     };
 
-    const getTime = () => {
-        const date = new Date();
-        let hour = addZero(date.getHours());
-        let minute = addZero(date.getMinutes());
-
-        return `${hour}:${minute}`;
-    };
-
     const addZero = number => number < 10 ? `0${number}` : number;
 
     const addNewTask = (newTaskContent) => {
@@ -101,7 +92,6 @@
                 {
                     content: newTaskContent,
                     done: false,
-                    time: getTime()
                 },
                 ...tasks
             ];
@@ -113,7 +103,6 @@
             {
                 content: newTaskContent,
                 done: false,
-                time: getTime()
             }
         ];
     };
