@@ -6,18 +6,13 @@
 
 .list__element {
     display: grid;
-    grid-template-columns: auto 2fr 0fr auto;
+    grid-template-columns: auto 1fr auto;
     grid-gap: 10px;
     align-items: center;
     padding: 20px;
     border-bottom: 1px solid #ccc;
 }
 
-@media(max-width: 563px) {
-    .list__element {
-        grid-template-columns: auto 7fr 6fr auto;
-    }
-}
 
 .list__element--done {
     text-decoration: line-through;
